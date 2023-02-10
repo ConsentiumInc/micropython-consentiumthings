@@ -36,4 +36,4 @@ class ThingsUpdate:
                 url = url+"&sensor1="+str(sensor_val[0])+"&info1="+str(info_buff[0])+"&sensor2="+str(sensor_val[1])+"&info2="+str(info_buff[1])+"&sensor3="+str(sensor_val[2])+"&info3="+str(info_buff[2])+"&sensor4="+str(sensor_val[3])+"&info4="+str(info_buff[3])+"&sensor5="+str(sensor_val[4])+"&info5="+str(info_buff[4])+"&sensor6="+str(sensor_val[5])+"&info6="+str(info_buff[5])+"&sensor7="+str(sensor_val[6])+"&info7="+str(info_buff[6])
             
         res = requests.get(url=url)
-        return res
+        return res.json()
