@@ -5,6 +5,8 @@ ESP 8266 test passing
 
 
 # module installation 
+
+'''Python
 import upip
 import network
 station = network.WLAN(network.STA_IF)
@@ -14,3 +16,4 @@ station.isconnected()
 print(station.ifconfig())
 
 upip.install('micropython-urequests')
+'''
