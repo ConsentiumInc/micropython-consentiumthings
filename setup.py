@@ -1,4 +1,4 @@
-__version__ = "0.0.1"
+__version__ = "0.0.3"
 
 from setuptools import setup, find_packages
 
@@ -17,7 +17,7 @@ setup(
     long_description=long_description(),
     long_description_content_type="text/markdown",
     license="MIT",
-    packages=find_packages(),
+    packages=['ConsentiumThings'],
     classifiers=[
         "Development Status :: 4 - Beta",
         "Programming Language :: Python :: 3 :: Only",
