@@ -32,14 +32,16 @@ import utime
 
 api_key = ""
 
+ssid = ""
+psk = ""
+
 board = ThingsUpdate(key=api_key)
 
-board.initWiFi("", "")
-
-sensor_val = [1, 2, 3, 4, 5, 6, 7]
-info_buff = ["a", "b", "c", "d", "e", "f", "g"]
+board.initWiFi(ssid,psk)
 
 while True:
+    sensor_val = [1, 2, 3, 4, 5, 6, 7]
+    info_buff = ["a", "b", "c", "d", "e", "f", "g"]
     r = board.sendREST(sensor_val=sensor_val, info_buff=info_buff)
     print(r.text)
     utime.sleep(5)

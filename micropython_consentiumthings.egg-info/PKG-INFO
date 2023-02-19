@@ -1,13 +1,15 @@
 Metadata-Version: 2.1
 Name: micropython-consentiumthings
-Version: 0.0.3
-Summary: A MicroPython library for send sensor data to ConsentiumThings IoT server
+Version: 0.0.7
+Summary: MicroPython IoT lib
 Home-page: https://github.com/ConsentiumInc/micropython-consentiumthings
+Author: Debjyoti Chowdhury
+Author-email: consentium.inc@gmail.com
+Maintainer: Debjyoti Chowdhury
+Maintainer-email: consentium.inc@gmail.com
 License: MIT
-Keywords: micropython,IoT
+Keywords: IoT,micropython
 Classifier: Development Status :: 4 - Beta
-Classifier: Programming Language :: Python :: 3 :: Only
-Classifier: Intended Audience :: Developers
 Classifier: Programming Language :: Python :: Implementation :: MicroPython
 Classifier: License :: OSI Approved :: MIT License
 Description-Content-Type: text/markdown
@@ -47,14 +49,16 @@ import utime
 
 api_key = ""
 
+ssid = ""
+psk = ""
+
 board = ThingsUpdate(key=api_key)
 
-board.initWiFi("", "")
-
-sensor_val = [1, 2, 3, 4, 5, 6, 7]
-info_buff = ["a", "b", "c", "d", "e", "f", "g"]
+board.initWiFi(ssid,psk)
 
 while True:
+    sensor_val = [1, 2, 3, 4, 5, 6, 7]
+    info_buff = ["a", "b", "c", "d", "e", "f", "g"]
     r = board.sendREST(sensor_val=sensor_val, info_buff=info_buff)
     print(r.text)
     utime.sleep(5)

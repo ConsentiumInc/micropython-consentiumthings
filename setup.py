@@ -1,27 +1,31 @@
-__version__ = "0.0.3"
+import sys
+sys.path.pop(0)
+from setuptools import setup
+from codecs import open
+from os import path
 
-from setuptools import setup, find_packages
+cwd = path.abspath(path.dirname(__file__))
 
-
-def long_description():
-    with open("README.md", "r") as fo:
-        return fo.read()
-
+# Get the long description from the README file
+with open(path.join(cwd, "README.md"), encoding="utf-8") as f:
+    long_description = f.read()
 
 setup(
     name="micropython-consentiumthings",
-    version=__version__,
-    url="https://github.com/ConsentiumInc/micropython-consentiumthings",
-    description="A MicroPython library for send sensor data to ConsentiumThings IoT server",
-    keywords=["micropython", "IoT"],
-    long_description=long_description(),
+    py_modules=["consentiumthings"],
+    version="0.0.7",
+    description="MicroPython IoT lib",
+    long_description=long_description,
     long_description_content_type="text/markdown",
+    keywords="IoT, micropython",
+    url="https://github.com/ConsentiumInc/micropython-consentiumthings",
+    author="Debjyoti Chowdhury",
+    author_email="consentium.inc@gmail.com",
+    maintainer="Debjyoti Chowdhury",
+    maintainer_email="consentium.inc@gmail.com",
     license="MIT",
-    packages=['ConsentiumThings'],
     classifiers=[
         "Development Status :: 4 - Beta",
-        "Programming Language :: Python :: 3 :: Only",
-        "Intended Audience :: Developers",
         "Programming Language :: Python :: Implementation :: MicroPython",
         "License :: OSI Approved :: MIT License",
     ],
