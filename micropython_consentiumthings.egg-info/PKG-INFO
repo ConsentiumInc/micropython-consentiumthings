@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: micropython-consentiumthings
-Version: 0.1.1
+Version: 0.1.2
 Summary: MicroPython IoT lib
 Home-page: https://github.com/ConsentiumInc/micropython-consentiumthings
 Author: Debjyoti Chowdhury
@@ -15,7 +15,7 @@ Classifier: License :: OSI Approved :: MIT License
 Description-Content-Type: text/markdown
 License-File: LICENSE
 
-# ConsentiumThingsPy
+# micropython-consentiumthings
 
 Passing tests on ESP 8266 and ESP 32
 
@@ -41,8 +41,9 @@ print(station.ifconfig())
 ```
 Then install dependencies and main module using upip
 ``` python
-upip.install('micropython-urequests')
-upip.install('micropython-consentiumthings', '/lib/')
+>>> import upip
+>>> upip.install('micropython-urequests')
+>>> upip.install('micropython-consentiumthings', '/lib/')
 
 ```
 

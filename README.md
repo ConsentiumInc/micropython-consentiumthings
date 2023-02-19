@@ -1,4 +1,4 @@
-# ConsentiumThingsPy
+# micropython-consentiumthings
 
 Passing tests on ESP 8266 and ESP 32
 
@@ -24,8 +24,9 @@ print(station.ifconfig())
 ```
 Then install dependencies and main module using upip
 ``` python
-upip.install('micropython-urequests')
-upip.install('micropython-consentiumthings', '/lib/')
+>>> import upip
+>>> upip.install('micropython-urequests')
+>>> upip.install('micropython-consentiumthings', '/lib/')
 
 ```
 

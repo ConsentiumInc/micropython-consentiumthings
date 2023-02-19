@@ -14,7 +14,7 @@ with open(path.join(cwd, "README.md"), encoding="utf-8") as f:
 setup(
     name="micropython-consentiumthings",
     py_modules=["ConsentiumThings"],
-    version="0.1.1",
+    version="0.1.2",
     description="MicroPython IoT lib",
     long_description=long_description,
     long_description_content_type="text/markdown",
