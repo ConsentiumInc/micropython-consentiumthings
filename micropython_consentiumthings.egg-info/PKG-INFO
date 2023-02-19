@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: micropython-consentiumthings
-Version: 0.0.9
+Version: 0.1.1
 Summary: MicroPython IoT lib
 Home-page: https://github.com/ConsentiumInc/micropython-consentiumthings
 Author: Debjyoti Chowdhury
@@ -24,24 +24,31 @@ Developed by Debjyoti Chowdhury from ConsentiumInc
 
 ## Installing dependencies and main library
 
-```python
+First connect to WiFi with SSID and Psk
 
-import upip
+```python
 import network
+
+ssid = ""
+psk = ""
+
 station = network.WLAN(network.STA_IF)
 station.active(True)
-station.connect("", "")
+station.connect(ssid,psk)
 station.isconnected()
 print(station.ifconfig())
 
+```
+Then install dependencies and main module using upip
+``` python
 upip.install('micropython-urequests')
-upip.install('micropython-consentiumthings')
+upip.install('micropython-consentiumthings', '/lib/')
 
 ```
 
 ## Examples of How To Use 
 
-Creating A Server
+Making requests to Consentium IoT server
 
 ```python
 from ConsentiumThings import ThingsUpdate

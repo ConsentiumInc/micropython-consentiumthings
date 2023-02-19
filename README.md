@@ -7,24 +7,31 @@ Developed by Debjyoti Chowdhury from ConsentiumInc
 
 ## Installing dependencies and main library
 
-```python
+First connect to WiFi with SSID and Psk
 
-import upip
+```python
 import network
+
+ssid = ""
+psk = ""
+
 station = network.WLAN(network.STA_IF)
 station.active(True)
-station.connect("", "")
+station.connect(ssid,psk)
 station.isconnected()
 print(station.ifconfig())
 
+```
+Then install dependencies and main module using upip
+``` python
 upip.install('micropython-urequests')
-upip.install('micropython-consentiumthings')
+upip.install('micropython-consentiumthings', '/lib/')
 
 ```
 
 ## Examples of How To Use 
 
-Creating A Server
+Making requests to Consentium IoT server
 
 ```python
 from ConsentiumThings import ThingsUpdate
